@@ -1,0 +1,136 @@
+body {
+  padding: 50px;
+  font-family: 'Roboto', "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font: 16px;
+  background: #eef0f3;
+  color: #555;
+  overflow: auto;
+  display: block;
+  height: 90%;
+}
+h1 {
+  font-weight: 200;
+}
+.overlay {
+  width: 100%;
+  height: 100%;
+  background:#FFFFFF;
+  opacity: .8;
+  position: relative;
+  z-index: 10000;
+}
+.loading {
+  position: fixed;
+  top: 50%;
+  left: 47%;
+  z-index: -1000000;
+  opacity: 1;
+}
+.app {
+  width: 940px;
+  margin: 0 auto;
+  display:block;
+  overflow:auto;
+}
+.assignment-list, .assignment-details {
+  background: #FFFFFF;
+  border-bottom: 2px solid #e4e7ec;
+  border-radius: 3px;
+  box-shadow: 0px 1px 1px 0px rgba(238,240,243,.6);
+}
+.assignment-list {
+  width: 220px;
+  margin-right: 20px;
+  float: left;
+}
+.assignment-details {
+  width: 700px;
+  float: right;
+}
+.menu span:first-child {
+  border-top-left-radius: 3px;
+}
+.menu span:last-child {
+  border-top-right-radius: 3px;
+  position: relative;
+  left: 1px;
+}
+.menu, .list-header {
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+.menu {
+  margin: 0 auto;
+}
+.menu span {
+  display: inline-block;
+  text-align: center;
+  width: 308px;
+  padding: 20px;
+}
+.assignment-item, .description, .submission-student {
+  padding: 20px;
+}
+.assignment-item:hover, .submission-student:hover {
+  background: #dae9fb;
+}
+.assignment-item-title, .assignment-item-due-date {
+  display: block;
+}
+.assignment-item-due-date {
+  font-size: 13px;
+  margin-top: 5px;
+}
+.assignment-title {
+  font-size: 24px;
+}
+.assignment-due-date {
+  float: right;
+  position: relative;
+  top: 8px;
+}
+.list-header {
+  padding: 10px 20px;
+  background: #e4e7ec;
+}
+.menu span {
+  background: #e4e7ec;
+}
+.menu span.selected {
+  background: #FFFFFF;
+}
+.avatar {
+  width: 50px;
+  border-radius: 5px;
+  display: inline-block;
+}
+.avatar img {
+  border-radius: 25px;
+}
+.student-name {
+  clear: both;
+  line-height: 16px;
+  position: relative;
+  top: -14px;
+}
+.hide-submission {
+  font-size: 13px;
+  color: #2079e9;
+  display: block;
+  margin-top: 30px;
+  float: right;
+}
+.submission-student {
+  overflow: auto;
+}
+.submission-student.open {
+  background: #f8f9fa;
+}
+.assignment-submitted-date {
+  float: right;
+  position: relative;
+  top: 14px;
+}
+.submission-content {
+  line-height: 22px;
+}

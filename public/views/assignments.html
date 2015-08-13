@@ -1,0 +1,40 @@
+<div class="overlay" ng-show="scope.loading === true">
+  <md-progress-circular md-mode="indeterminate" class="loading"></md-progress-circular>  
+</div>
+<div class="app">
+  <h1>Assignment Dashboard</h1>
+  <div ng-show="scope.loading === false">
+    <div class="assignment-list">
+      <div class="list-header">Assignments</div>
+      <div class="assignment-item" ng-repeat="assignment in scope.assignments" ng-click="scope.viewAssignment(assignment)">
+        <div>
+          <a class="assignment-item-title">{{ assignment.title }}</a>
+          <span class="assignment-item-due-date">Due {{ assignment.due_at | date:'MM/dd/yyyy @ h:mma'}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="assignment-details">
+      <div class="menu">
+        <span ng-click="scope.assignmentDisplayToggle('description')" ng-class="scope.assignmentDisplay === 'description' ? 'selected' : ''">Assignment Description</span>
+        <span ng-click="scope.assignmentDisplayToggle('submissions')" ng-class="scope.assignmentDisplay === 'submissions' ? 'selected' : ''">Student Submissions</span>
+      </div>
+      <div class="description" ng-show="scope.assignmentDisplay === 'description'">
+        <span class="assignment-title">{{ scope.selectedAssignment.title }}</span>
+        <span class="assignment-due-date">Due {{ scope.selectedAssignment.due_at | date:'MM/dd/yyyy @ h:mma' }}</span>
+        <p class="assignment-description">{{ scope.selectedAssignment.description }}</p>
+      </div>
+      <div class="submissions" ng-show="scope.assignmentDisplay === 'submissions'">
+        <div ng-class="submission.displaySubmission ? 'submission-student open': 'submission-student'" ng-repeat="submission in scope.selectedAssignmentSubmissions" ng-click="scope.toggleStudentSubmission(submission)">
+          <div class="avatar">
+            <img ng-src={{submission.creator.avatars.small}}>
+          </div>
+          <span class="student-name">{{ submission.creator.first_name + " " + submission.creator.last_name }}</span>
+          <span class="assignment-submitted-date">Submitted {{ submission.submitted_at | date:'MM/dd/yyyy @ h:mma' }}</span>
+
+          <p class="submission-content" ng-show="submission.displaySubmission">{{ submission.content }}</p>
+        </div>
+
+      </div>    
+    </div>
+  </div>
+</div>

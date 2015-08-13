@@ -1,0 +1,1 @@
+var homework = angular.module('homework', ['ngRoute', 'ngMaterial']);

@@ -5,7 +5,6 @@ homework.controller('AssignmentsController', function ($scope, API) {
   $scope.scope.selectedAssignmentSubmissions = [];
 
   $scope.scope.viewAssignment = function (assignment) {
-    console.log('viewAssignment');
     $scope.scope.selectedAssignment = assignment;
     $scope.scope.assignmentDisplayToggle('description');
     $scope.scope.selectedAssignmentSubmissions = [];
@@ -21,13 +20,11 @@ homework.controller('AssignmentsController', function ($scope, API) {
       if ($scope.scope.submissions[key].assignment_id === id) {
         $scope.scope.selectedAssignmentSubmissions.push($scope.scope.submissions[key]); 
         $scope.scope.submissions[key].displaySubmission = false;
-        console.log($scope.scope.submissions[key])
       }
     }
   };
 
   $scope.scope.toggleStudentSubmission = function (submission) {
-    console.log('in toggleStudentSubmission')
     submission.displaySubmission = !submission.displaySubmission;
   };
 

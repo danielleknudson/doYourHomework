@@ -1,36 +1,32 @@
 body {
   padding: 50px;
+  min-height: 600px;
+  height: auto;
+  overflow: auto;
   font-family: 'Roboto', "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  font: 16px;
+  font-size: 16px;
   background: #eef0f3;
   color: #555;
-  overflow: auto;
-  display: block;
-  height: 90%;
 }
 h1 {
   font-weight: 200;
+  margin-top: 0;
 }
 .overlay {
   width: 100%;
-  height: 100%;
-  background:#FFFFFF;
-  opacity: .8;
-  position: relative;
-  z-index: 10000;
+  position: absolute;
+  top: 0;
+  left: 3;
 }
 .loading {
   position: fixed;
   top: 50%;
   left: 47%;
-  z-index: -1000000;
-  opacity: 1;
+  z-index: 1000000;
 }
 .app {
   width: 940px;
-  margin: 0 auto;
-  display:block;
-  overflow:auto;
+]  margin: 0 auto;
 }
 .assignment-list, .assignment-details {
   background: #FFFFFF;
@@ -41,11 +37,14 @@ h1 {
 .assignment-list {
   width: 220px;
   margin-right: 20px;
+  display: inline-block;
   float: left;
 }
 .assignment-details {
   width: 700px;
-  float: right;
+  position: relative;
+  display: inline-block;
+  height: auto;
 }
 .menu span:first-child {
   border-top-left-radius: 3px;
@@ -122,8 +121,9 @@ h1 {
 }
 .submission-student {
   overflow: auto;
+  position: relative;
 }
-.submission-student.open {
+.submission-student.open, .assignment-item.selected {
   background: #f8f9fa;
 }
 .assignment-submitted-date {
@@ -133,4 +133,5 @@ h1 {
 }
 .submission-content {
   line-height: 22px;
+  position: relative;
 }

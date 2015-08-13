@@ -6,3 +6,4 @@ Tool for teachers to browse assignments and view submissions
 - cd doYourHomework
 - run npm install
 - run gulp
+- go to http://localhost:8080
